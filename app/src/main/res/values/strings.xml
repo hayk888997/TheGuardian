@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">The Guardian</string>
+    <string name="news_list">News list</string>
+    <string name="news_title">New Title</string>
+    <string name="section">Section: %s</string>
+    <string name="pillar">Pillar: %s</string>
+    <string name="news_section_name">News Section Name</string>
+    <string name="news_pillar_name">News Pillar Name</string>
+    <string name="loading_news">Loading News …</string>
+
+    <string name="transition_name">transition_name</string>
+    <string name="ok">OK</string>
+</resources>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="news"
+            type="com.example.test.theguardian.service.model.NewsModel" />
+
+        <variable
+            name="callback"
+            type="com.example.test.theguardian.view.callback.NewsClickCallback" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/item_horizontal_margin"
+        android:layout_marginEnd="@dimen/item_horizontal_margin"
+        android:orientation="horizontal"
+        app:cardUseCompatPadding="true">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/item_horizontal_margin"
+            android:layout_marginEnd="@dimen/item_horizontal_margin"
+            android:onClick="@{() ->  callback.onClick(news, tvTitle)}"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/news_title"
+                android:text="@{news.webTitle}"
+                android:textSize="@dimen/news_text"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_section_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/news_section_name"
+                android:text="@{String.format(@string/section, news.sectionName)}"
+                android:textSize="@dimen/news_text" />
+
+            <TextView
+                android:id="@+id/tv_pillar_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/news_pillar_name"
+                android:text="@{String.format(@string/pillar, news.pillarName)}"
+                android:textSize="@dimen/news_text" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>
